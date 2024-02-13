@@ -1,15 +1,11 @@
 describe('Login', () => {
   it('successfully', () => {
-<<<<<<< HEAD
-    cy.login()   // o comando ta vindo de support/gui_commands.js
- 
-    cy.get('.qa-user-avatar').should('be.visible')
-  })
+    const user = Cypress.env('user_name')
+    const password = Cypress.env('user_password')
+    const options = { cacheSession: false }
 
-=======
-    cy.login()
+    cy.login(user, password, options)
 
     cy.get('.qa-user-avatar').should('be.visible')
   })
->>>>>>> 973b02f754de15148fba4618b62523cd5de82944
 })
